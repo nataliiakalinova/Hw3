@@ -1,0 +1,42 @@
+<h2 class="md-no-sticky">{{ type }}</h2>
+<md-content layout-padding class="autoScroll">
+    <form ng-submit="createItem()">
+        <md-input-container md-no-float>
+            <label>Name (required)</label>
+            <input ng-model="person.name" type="text" ng-required="true">
+        </md-input-container>
+        <md-input-container md-no-float>
+            <label>Surname (required)</label>
+            <input ng-model="person.surname" type="text" ng-required="true">
+        </md-input-container>
+        <md-input-container md-no-float>
+            <label>Phone Number</label>
+            <input ng-model="person.phone" type="tel">
+        </md-input-container>
+        <md-input-container md-no-float>
+            <label>Email (required)</label>
+            <input ng-model="person.email" type="email" ng-required="true">
+        </md-input-container>
+        <md-button class="md-raised md-primary" type="submit">Create</md-button>
+    </form>
+</md-content>
+<br><br>
+<md-divider></md-divider>
+<md-list>
+
+    <md-list-item ng-repeat="item in list track by item._id" class = "list">
+
+        <div class="info">
+            <p><b>Name: </b>{{ item.name }} </p>
+            <p><b>Surname: </b>{{ item.surname }} </p>
+            <p><b>Phone: </b>{{ item.phone }}</p>
+            <p><b>Email: </b>{{ item.email }}</p>
+            <p ng-show="isMentor"><b><a href="#/pairs">Mentees:</a></b> {{ item.mentees.length || 0 }}</p>
+        </div>
+        <div class="controls">
+            <md-button class="md-raised md-warn" ng-click="deleteItem(item)">Delete</md-button>
+        </div>
+
+    </md-list-item>
+
+</md-list>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HW 3</title>
+    <link rel="stylesheet" href="app/bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <meta name="viewport" content="initial-scale=1" />
+    <script src="app/bower_components/angular/angular.js"></script>
+    <script src="app/bower_components/angular-route/angular-route.js"></script>
+    <script src="app/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="app/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="app/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="app/bower_components/angular-material/angular-material.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/components/list/list.js"></script>
+    <script src="app/components/pairs/pairs.js"></script>
+    <script src="app/shared/db/services.js"></script>
+</head>
+<body layout="column">
+<md-toolbar layout="row">
+    <div class="md-toolbar-tools">
+        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+            <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+        </md-button>
+        <h1 class = "md-headline"><a href="#/mentor">HW3</a></h1>
+    </div>
+</md-toolbar>
+
+<div layout="row" flex>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
+
+        <md-content class="md-padding">
+            <md-list>
+                <md-list-item>
+                    <div><a href="#/mentor">Mentors</a></div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <div><a href="#/mentee">Mentees</a></div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <div><a href="#/pairs">Pairs</a></div>
+                </md-list-item>
+                <md-divider></md-divider>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </md-sidenav>
+    <div layout="column" flex id="content">
+        <md-content layout="column" flex class="md-padding">
+            <div ng-view></div>
+        </md-content>
+    </div>
+</div>
+
+
+</md-content>
+</body>
+</html>

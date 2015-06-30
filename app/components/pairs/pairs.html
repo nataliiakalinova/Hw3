@@ -1,0 +1,51 @@
+<div layout="row" flex layout-align="center center">
+
+    <div flex>
+
+        <md-select ng-model="mentee" md-on-open="loadMentees()" style="min-width: 200px;">
+
+            <md-select-label>{{ mentee ? mentee.name : 'Select mentee' }}</md-select-label>
+            <md-option ng-value="mentee" ng-repeat="mentee in mentees">{{mentee.name}} {{mentee.surname}}</md-option>
+
+        </md-select>
+
+    </div>
+
+    <div flex>
+
+        <md-button class="md-raised md-primary" ng-click="assign()">Assign to</md-button>
+
+    </div>
+
+    <div flex="20">
+
+        <md-select ng-model="mentor" md-on-open="loadMentors()" style="min-width: 200px;">
+
+            <md-select-label>{{ mentor ? mentor.name : 'Select mentor' }}</md-select-label>
+            <md-option ng-value="mentor" ng-repeat="mentor in mentors">{{mentor.name}} {{mentor.surname}}
+            </md-option>
+
+        </md-select>
+    </div>
+
+
+</div>
+
+<md-list>
+
+    <md-list-item ng-repeat="pair in pairs track by $index">
+
+        <md-input-container md-no-float>
+            <div><b>Name: </b>{{ pair.name }}</div>
+
+            <div><b>Mentees:</b></div>
+            <ul>
+                <li ng-repeat="mentee in pair.mentees">
+                    {{ mentee }}
+                </li>
+            </ul>
+        </md-input-container>
+
+    </md-list-item>
+
+</md-list>

@@ -1,0 +1,20 @@
+{
+  "name": "hw3",
+  "version": "0.0.0",
+  "authors": [
+    "nataliikalinova <nataly.kalinova@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.10.0",
+    "angular-route": "~1.4.1",
+    "angular-resource": "~1.4.1"
+  }
+}
